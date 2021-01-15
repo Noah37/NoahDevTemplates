@@ -12,6 +12,7 @@
 		3D3AB8BF25B18EDB006C585B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D3AB8BE25B18EDB006C585B /* Assets.xcassets */; };
 		3D3AB8C225B18EDB006C585B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D3AB8C025B18EDB006C585B /* Main.storyboard */; };
 		3D3AB8C525B18EDB006C585B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3AB8C425B18EDB006C585B /* main.m */; };
+		3D3AB8CE25B1925C006C585B /* install.sh in Resources */ = {isa = PBXBuildFile; fileRef = 3D3AB8CD25B1925C006C585B /* install.sh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		3D3AB8C325B18EDB006C585B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D3AB8C425B18EDB006C585B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3D3AB8C625B18EDB006C585B /* NoahDevTemplates.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NoahDevTemplates.entitlements; sourceTree = "<group>"; };
+		3D3AB8CD25B1925C006C585B /* install.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = install.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +43,7 @@
 		3D3AB8AC25B18ED9006C585B = {
 			isa = PBXGroup;
 			children = (
+				3D3AB8CD25B1925C006C585B /* install.sh */,
 				3D3AB8B725B18ED9006C585B /* NoahDevTemplates */,
 				3D3AB8B625B18ED9006C585B /* Products */,
 			);
@@ -80,6 +83,7 @@
 				3D3AB8B125B18ED9006C585B /* Sources */,
 				3D3AB8B225B18ED9006C585B /* Frameworks */,
 				3D3AB8B325B18ED9006C585B /* Resources */,
+				3D3AB8CF25B19418006C585B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -128,11 +132,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D3AB8BF25B18EDB006C585B /* Assets.xcassets in Resources */,
+				3D3AB8CE25B1925C006C585B /* install.sh in Resources */,
 				3D3AB8C225B18EDB006C585B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3D3AB8CF25B19418006C585B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${SRCROOT}/install.sh\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3D3AB8B125B18ED9006C585B /* Sources */ = {
