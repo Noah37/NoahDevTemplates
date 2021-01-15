@@ -16,8 +16,17 @@ CUR_USER=$(whoami)
 TEMPLATES_PATH="/Users/${CUR_USER}/Library/Developer/Xcode/Templates/NoahDev"
 PACK_TEMPLATES_PATH="${SRCROOT}/Pack/NoahDevTemp"
 PACK_TOOLS_PATH="${SRCROOT}/Pack/NoahDevOpt"
+OPT_DEV_PATH="/opt/NoahDev"
+
+CUR_TIME=$(date "+%Y-%m-%d %H:%M:%S")
+echo "CUR_TIME:${CUR_TIME}"
+if [ -d "${TEMPLATES_PATH}" ]; then
+    mv $TEMPLATES_PATH "${TEMPLATES_PATH}_${CUR_TIME}"
+fi
 
 
-
+if [ -d "${OPT_DEV_PATH}" ]; then
+    mv $OPT_DEV_PATH "${OPT_DEV_PATH}_${CUR_TIME}"
+fi
 cp -rf $PACK_TEMPLATES_PATH $TEMPLATES_PATH
-cp -rf $PACK_TOOLS_PATH "/opt/NoahDev"
+cp -rf $PACK_TOOLS_PATH ${OPT_DEV_PATH}
