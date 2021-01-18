@@ -18,6 +18,14 @@ PACK_TEMPLATES_PATH="${SRCROOT}/Pack/NoahDevTemp"
 PACK_TOOLS_PATH="${SRCROOT}/Pack/NoahDevOpt"
 OPT_DEV_PATH="/opt/NoahDev"
 
+if [ ! -d "${OPT_DEV_PATH}" ]; then
+    mkdir $OPT_DEV_PATH
+fi
+
+if [ ! -d "${TEMPLATES_PATH}" ]; then
+    mkdir $TEMPLATES_PATH
+fi
+
 CUR_TIME=$(date "+%Y-%m-%d %H:%M:%S")
 echo "CUR_TIME:${CUR_TIME}"
 if [ -d "${TEMPLATES_PATH}" ]; then
