@@ -13,28 +13,28 @@
 # /opt/NoahDev
 
 CUR_USER=$(whoami)
-TEMPLATES_PATH="/Users/${CUR_USER}/Library/Developer/Xcode/Templates/NoahDev"
+TEMPLATES_PATH="/Users/${CUR_USER}/Library/Developer/Xcode/Templates/"
+NOAHDEV_TEMPLATES_PATH="${TEMPLATES_PATH}/NoahDev"
 PACK_TEMPLATES_PATH="${SRCROOT}/Pack/NoahDevTemp"
-PACK_TOOLS_PATH="${SRCROOT}/Pack/NoahDevOpt"
+PACK_TOOLS_PATH="${SRCROOT}/Pack/NoahDevOpt/"
 OPT_DEV_PATH="/opt/NoahDev"
-
-if [ ! -d "${OPT_DEV_PATH}" ]; then
-    mkdir $OPT_DEV_PATH
-fi
-
-if [ ! -d "${TEMPLATES_PATH}" ]; then
-    mkdir $TEMPLATES_PATH
-fi
+PASSWORD='123456' # 替换成自己的电脑密码
 
 CUR_TIME=$(date "+%Y-%m-%d %H:%M:%S")
 echo "CUR_TIME:${CUR_TIME}"
-if [ -d "${TEMPLATES_PATH}" ]; then
-    mv $TEMPLATES_PATH "${TEMPLATES_PATH}_${CUR_TIME}"
+if [ ! -d "${OPT_DEV_PATH}" ]; then
+    echo $PASSWORD | sudo -S mkdir $OPT_DEV_PATH
+else
+    echo $PASSWORD | sudo -S mv $OPT_DEV_PATH "${OPT_DEV_PATH}_${CUR_TIME}"
 fi
 
-
-if [ -d "${OPT_DEV_PATH}" ]; then
-    mv $OPT_DEV_PATH "${OPT_DEV_PATH}_${CUR_TIME}"
+if [ ! -d "${TEMPLATES_PATH}" ]; then
+    echo $PASSWORD | sudo -S mkdir $TEMPLATES_PATH
 fi
-cp -rf $PACK_TEMPLATES_PATH $TEMPLATES_PATH
-cp -rf $PACK_TOOLS_PATH ${OPT_DEV_PATH}
+
+if [ -d "${NOAHDEV_TEMPLATES_PATH}" ]; then
+    echo $PASSWORD | sudo -S mv $NOAHDEV_TEMPLATES_PATH "${NOAHDEV_TEMPLATES_PATH}_${CUR_TIME}"
+fi
+
+echo $PASSWORD | sudo -S cp -rf $PACK_TEMPLATES_PATH $TEMPLATES_PATH
+echo $PASSWORD | sudo -S cp -rf $PACK_TOOLS_PATH ${OPT_DEV_PATH}
